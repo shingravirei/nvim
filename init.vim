@@ -15,14 +15,23 @@ Plug 'maxmellon/vim-jsx-pretty'
 " sneak
 Plug 'justinmk/vim-sneak'
 
+" oceanic-next
+Plug 'mhartington/oceanic-next'
+
 " vim-one
 Plug 'rakr/vim-one'
+
+" ayu
+Plug 'ayu-theme/ayu-vim'
 
 " gruvbox
 Plug 'morhetz/gruvbox'
 
 " one-dark
 Plug 'joshdick/onedark.vim'
+
+" iceberg
+Plug 'cocopon/iceberg.vim'
 
 "auto-pairs
 Plug 'jiangmiao/auto-pairs'
@@ -53,9 +62,6 @@ Plug 'vim-airline/vim-airline'
 
 " airline theme
 Plug 'vim-airline/vim-airline-themes'
-
-" Palenight Theme
-"Plug 'drewtempelmeyer/palenight.vim'
 
 " Material Theme
 Plug 'kaicataldo/material.vim'
@@ -107,10 +113,10 @@ set expandtab
 set softtabstop=4
 set smarttab
 set autoindent
-
-" indent
-set autoindent
 set smartindent
+
+" cursorline
+set cursorline
 
 " snippets config
 let g:UltiSnipsExpandTrigger="<S-tab>"
@@ -118,22 +124,16 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " indentline config
-"let g:indentLine_setColors = 0
 let g:indentLine_char = '│'
 
 " Airline Config
-let g:airline_theme='one'
+let g:airline_theme='oceanicnext'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Color Scheme Config
-syntax on
-let g:one_allow_italics = 1
-colorscheme one
-set background=dark
-
 if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
@@ -141,6 +141,13 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+
+syntax on
+"let g:one_allow_italics = 1
+"let g:onedark_terminal_italics = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+"set background=dark
 
 " JSX Colorful style
 let g:vim_jsx_pretty_colorful_config = 1
