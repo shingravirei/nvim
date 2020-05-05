@@ -1,0 +1,25 @@
+{
+  // tsserver
+  "javascript.format.enabled": true,
+
+  // Coc Prettier
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "html",
+    "json",
+    "scss",
+    "sass",
+    "less",
+    "vetur",
+    "vue"
+  ],
+  "prettier.disableLanguages": [],
+
+  // ESlint
+  "eslint.run": "onSave",
+
+  // Vetur
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.options.tabSize": 4,
+}
