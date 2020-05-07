@@ -48,9 +48,6 @@ Plug 'mattn/emmet-vim'
 " nerdTree
 Plug 'preservim/nerdtree'
 
-" devicons
-Plug 'ryanoasis/vim-devicons'
-
 " vim-javascript
 Plug 'pangloss/vim-javascript'
 
@@ -92,6 +89,12 @@ Plug 'sainnhe/gruvbox-material'
 
 " vim eunuch
 Plug 'tpope/vim-eunuch'
+
+" startify
+Plug 'mhinz/vim-startify'
+
+" devicons
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set encoding=utf-8
@@ -99,8 +102,8 @@ set encoding=utf-8
 " Custom mappings
 let mapleader = " "
 nnoremap <silent> <leader>w :w <CR>
-nnoremap <silent> <leader><Right> :bn <CR>
-nnoremap <silent> <leader><Left> :bp <CR>
+nnoremap <silent> <Tab> :bn <CR>
+nnoremap <silent> <S-Tab> :bp <CR>
 nnoremap <silent> <leader>,q :q <CR>
 nnoremap <silent> <leader>,e :e ~/.config/nvim/init.vim <CR>
 nmap <silent> <F6> :NERDTreeToggle <bar> :NERDTreeRefreshRoot <CR>
@@ -127,11 +130,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:indentLine_char = '│'
 
 " Airline Config
-let g:airline_theme='oceanicnext'
+let g:airline_theme='material'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#enabled = 0
 
 " Color Scheme Config
 if (has("nvim"))
@@ -143,14 +147,19 @@ if (has("termguicolors"))
 endif
 
 syntax on
-"let g:one_allow_italics = 1
-"let g:onedark_terminal_italics = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
-"set background=dark
+"let g:oceanic_next_terminal_italic = 1
+"colorscheme OceanicNext
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'palenight'
+colorscheme material
 
 " JSX Colorful style
 let g:vim_jsx_pretty_colorful_config = 1
+
+" JSX comment fix
+let g:NERDCustomDelimiters={
+	\ 'javascript': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+\}
 
 " vim-vue
 let g:vue_pre_processors = []
@@ -161,37 +170,48 @@ set number
 " ctrlP config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_window = 'min:4,max:15'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Startify config
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_custom_header = []
+
+" NERDTree
+let NERDTreeDirArrowExpandable=""
+let NERDTreeDirArrowCollapsible=""
+let NERDTreeMinimalUI = 1
+let NERDTreeWinSize = 28
+let g:NERDTreeWinPos = "right"
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-" NERDTree
-let g:NERDTreeWinPos = "right"
 
 " ----------------------------- HTML CLOSETAG-----------------
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.js'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
 "
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.vue'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.vue,.*js'
 
 " filetypes like xml, html, xhtml, ...
 " These are the file types where this plugin is enabled.
 "
-let g:closetag_filetypes = 'html,xhtml,phtml,vue'
+let g:closetag_filetypes = 'html,xhtml,phtml,vue,js'
 
 " filetypes like xml, xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
 "
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,vue'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,vue,js'
 
 " integer value [0|1]
 " This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
@@ -203,7 +223,7 @@ let g:closetag_emptyTags_caseSensitive = 1
 "
 let g:closetag_regions = {
     \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
+    \ 'javascript.js': 'jsxRegion',
     \ }
 
 " Shortcut for closing tags, default is '>'
@@ -312,19 +332,6 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Introduce function text object
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-
-" Use <TAB> for selections ranges.
-" NOTE: Requires 'textDocument/selectionRange' support from the language server.
-" coc-tsserver, coc-python are the examples of servers that support it.
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
