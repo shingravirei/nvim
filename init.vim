@@ -1,125 +1,6 @@
-" NVIM Plugins
-call plug#begin()
-" html closetag
-Plug 'alvan/vim-closetag'
-
-" vim-vue
-Plug 'posva/vim-vue'
-
-" NERDCommenter
-Plug 'preservim/nerdcommenter'
-
-" jsx-pretty
-Plug 'maxmellon/vim-jsx-pretty'
-
-" sneak
-Plug 'justinmk/vim-sneak'
-
-" oceanic-next
-Plug 'mhartington/oceanic-next'
-
-" vim-one
-Plug 'rakr/vim-one'
-
-" ayu
-Plug 'ayu-theme/ayu-vim'
-
-" gruvbox
-Plug 'morhetz/gruvbox'
-
-" one-dark
-Plug 'joshdick/onedark.vim'
-
-" iceberg
-Plug 'cocopon/iceberg.vim'
-
-"auto-pairs
-Plug 'jiangmiao/auto-pairs'
-
-" snippets engine
-Plug 'SirVer/ultisnips'
-
-" snippets snippets
-Plug 'honza/vim-snippets'
-
-" emmet
-Plug 'mattn/emmet-vim'
-
-" nerdTree
-Plug 'preservim/nerdtree'
-
-" vim-javascript
-Plug 'pangloss/vim-javascript'
-
-" Dracula
-Plug 'dracula/vim', { 'as': 'dracula' }
-
-" airline
-Plug 'vim-airline/vim-airline'
-
-" airline theme
-Plug 'vim-airline/vim-airline-themes'
-
-" Material Theme
-Plug 'kaicataldo/material.vim'
-
-" Close Tag
-Plug 'alvan/vim-closetag'
-
-" ctrl + p
-Plug 'ctrlpvim/ctrlp.vim'
-
-" coc.vim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" indentline
-Plug 'Yggdroot/indentLine'
-
-" fugitive
-Plug 'tpope/vim-fugitive'
-
-" toml syntax
-Plug 'cespare/vim-toml'
-
-" vim surround
-Plug 'tpope/vim-surround'
-
-" gruvbox material
-Plug 'sainnhe/gruvbox-material'
-
-" vim eunuch
-Plug 'tpope/vim-eunuch'
-
-" startify
-Plug 'mhinz/vim-startify'
-
-" devicons
-Plug 'ryanoasis/vim-devicons'
-call plug#end()
-
-set encoding=utf-8
-
-" Custom mappings
-let mapleader = " "
-nnoremap <silent> <leader>w :w <CR>
-nnoremap <silent> <Tab> :bn <CR>
-nnoremap <silent> <S-Tab> :bp <CR>
-nnoremap <silent> <leader>,q :q <CR>
-nnoremap <silent> <leader>,e :e ~/.config/nvim/init.vim <CR>
-nmap <silent> <F6> :NERDTreeToggle <bar> :NERDTreeRefreshRoot <CR>
-nnoremap <silent> <c-x> :bdelete <CR> " delete current buffer
-
-" Tab fix
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set softtabstop=4
-set smarttab
-set autoindent
-set smartindent
-
-" cursorline
-set cursorline
+source ~/.config/nvim/plugin.vim " Plugin Config
+source ~/.config/nvim/mapping.vim " Custom Mappings
+source ~/.config/nvim/general.vim " General Stuff
 
 " snippets config
 let g:UltiSnipsExpandTrigger="<S-tab>"
@@ -139,16 +20,13 @@ let g:airline#extensions#coc#enabled = 0
 
 " Color Scheme Config
 if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 if (has("termguicolors"))
-  set termguicolors
+    set termguicolors
 endif
 
-syntax on
-"let g:oceanic_next_terminal_italic = 1
-"colorscheme OceanicNext
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'palenight'
 colorscheme material
@@ -163,9 +41,6 @@ let g:NERDCustomDelimiters={
 
 " vim-vue
 let g:vue_pre_processors = []
-
-" Numbers on left
-set number
 
 " ctrlP config
 let g:ctrlp_map = '<c-p>'
@@ -239,10 +114,6 @@ let g:closetag_shortcut = '>'
 
 " TextEdit might fail if hidden is not set.
 set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
 
 " Give more space for displaying messages.
 set cmdheight=1
