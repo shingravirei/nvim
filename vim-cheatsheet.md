@@ -12,6 +12,8 @@
 - `zz` - cursor line to MID
 - `zt` - cursor line to TOP
 - `zb` - cursor line to BOT
+- `gd` - go to definition
+- `<c-o>` - go back
 
 ### Buffer manipulation
 
@@ -32,4 +34,10 @@
 - `ciw` - change inner word
 - `cib` - change inner block
 - `ci)` - change inner paren
-
+- `*cw {new word} <esc> n .` | `*cgn` - change word occurrences
+- `cs"'` - change surroundings
+- `ds"` - remove pairs
+- `yss"` - surround whole line
+- `S"` - {in visual mode} surround whole selection
+- `<leader>c<leader>` - toggle comment
+- `<leader>ca<leader>` - toggle comment alternative
