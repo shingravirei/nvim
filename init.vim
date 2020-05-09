@@ -42,6 +42,12 @@ let g:NERDCustomDelimiters={
 " vim-vue
 let g:vue_pre_processors = []
 
+" colorizer config 
+lua require 'colorizer'.setup()
+
+" fzf config
+let g:fzf_preview_window = ''
+
 " ctrlP config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'

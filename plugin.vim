@@ -2,7 +2,7 @@
 call plug#begin()
     " html closetag
     Plug 'alvan/vim-closetag'
-
+    
     " vim-vue
     Plug 'posva/vim-vue'
 
@@ -11,6 +11,9 @@ call plug#begin()
 
     " jsx-pretty
     Plug 'maxmellon/vim-jsx-pretty'
+    
+    " colorizer
+    Plug 'norcalli/nvim-colorizer.lua'
 
     " sneak
     Plug 'justinmk/vim-sneak'
@@ -53,6 +56,10 @@ call plug#begin()
 
     " ctrl + p
     Plug 'ctrlpvim/ctrlp.vim'
+    
+    " fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
     " coc.vim
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
