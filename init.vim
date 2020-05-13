@@ -88,8 +88,8 @@ let g:NERDTreeWinPos = "right"
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" vmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 
 " ----------------------------- HTML CLOSETAG-----------------

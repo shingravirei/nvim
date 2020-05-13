@@ -12,7 +12,8 @@
     "sass",
     "less",
     "vetur",
-    "vue"
+    "vue",
+    "rust"
   ],
   "prettier.disableLanguages": [],
 

@@ -73,7 +73,7 @@ call plug#begin()
 
     " toml syntax
     Plug 'cespare/vim-toml'
-
+    
     " vim surround
     Plug 'tpope/vim-surround'
 

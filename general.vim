@@ -18,5 +18,6 @@ set noswapfile
 set numberwidth=2
 set noshowmode
 set showtabline=2
+set autoread
 syntax on
 filetype plugin on
