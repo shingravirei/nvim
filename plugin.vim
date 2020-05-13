@@ -46,7 +46,11 @@ call plug#begin()
     Plug 'pangloss/vim-javascript'
 
     " airline
-    Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline'
+
+    " lightline
+    Plug 'itchyny/lightline.vim'    
+    Plug 'mengelbrecht/lightline-bufferline'
 
     " Material Theme
     Plug 'kaicataldo/material.vim'
@@ -64,11 +68,8 @@ call plug#begin()
     " coc.vim
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-    " indentline
-    Plug 'Yggdroot/indentLine'
-
     " fugitive
-    Plug 'tpope/vim-fugitive'
+    " Plug 'tpope/vim-fugitive'
 
     " toml syntax
     Plug 'cespare/vim-toml'

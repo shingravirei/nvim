@@ -9,7 +9,7 @@ set autoindent
 set smartindent
 set cursorline
 set lazyredraw
-set scrolloff=5
+set scrolloff=6
 set number
 set linebreak
 set nobackup
@@ -17,5 +17,6 @@ set nowb
 set noswapfile
 set numberwidth=2
 set noshowmode
+set showtabline=2
 syntax on
 filetype plugin on

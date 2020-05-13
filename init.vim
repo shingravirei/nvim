@@ -7,16 +7,32 @@ let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" indentline config
-let g:indentLine_char = '│'
-
 " Airline Config
-let g:airline_theme='material'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#branch#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#coc#enabled = 0
+"let g:airline_theme='material'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#coc#enabled = 0
+
+" lightline config
+let g:lightline#bufferline#filename_modifier = ':t'
+let g:lightline = {
+      \ 'colorscheme': 'material_vim',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ }
+      \ }
 
 " Color Scheme Config
 if (has("nvim"))
@@ -35,8 +51,11 @@ colorscheme material
 let g:vim_jsx_pretty_colorful_config = 1
 
 " JSX comment fix
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
 let g:NERDCustomDelimiters={
 	\ 'javascript': { 'left': '//', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+    \ 'vue': { 'left': '//', 'leftAlt': '<!--', 'rightAlt': '-->' }
 \}
 
 " vim-vue
@@ -222,7 +241,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings using CoCList:
 " Show all diagnostics.
