@@ -1,5 +1,9 @@
 " Plugins
 call plug#begin()
+
+    " markdow preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
     " html closetag
     Plug 'alvan/vim-closetag'
     
@@ -46,11 +50,11 @@ call plug#begin()
     Plug 'pangloss/vim-javascript'
 
     " airline
-    "Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline'
 
     " lightline
-    Plug 'itchyny/lightline.vim'    
-    Plug 'mengelbrecht/lightline-bufferline'
+    "Plug 'itchyny/lightline.vim'    
+    "Plug 'mengelbrecht/lightline-bufferline'
 
     " Material Theme
     Plug 'kaicataldo/material.vim'
@@ -67,9 +71,12 @@ call plug#begin()
 
     " coc.vim
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    
+    " c++ syntax
+    Plug 'octol/vim-cpp-enhanced-highlight'
 
     " fugitive
-    " Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive'
 
     " toml syntax
     Plug 'cespare/vim-toml'

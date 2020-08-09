@@ -1,4 +1,33 @@
 {
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml"
+      ],
+      "filetypes": ["hs", "lhs", "haskell"],
+      "initializationOptions": {
+        "haskell": {}
+      }
+    }
+  },
+
+  "rust-analyzer.inlayHints.chainingHints": false,
+  "rust-analyzer.checkOnSave.enable": false,
+  "rust-analyzer.checkOnSave.allTargets": false,
+  "rust-analyzer.checkOnSave.extraArgs": ["--target-dir", "src"],
   // tsserver
   "javascript.format.enabled": true,
 
@@ -13,7 +42,14 @@
     "less",
     "vetur",
     "vue",
-    "rust"
+    "rust",
+    "typescript",
+    "cpp",
+    "h",
+    "c",
+    "hpp",
+    "go",
+    "golang"
   ],
   "prettier.disableLanguages": [],
 
@@ -23,4 +59,7 @@
   // Vetur
   "vetur.format.defaultFormatter.html": "prettier",
   "vetur.format.options.tabSize": 4,
+
+  // CoC Clangd
+  "clangd.semanticHighlighting": true
 }

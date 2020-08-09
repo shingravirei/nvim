@@ -8,31 +8,31 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Airline Config
-"let g:airline_theme='material'
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#formatter = 'unique_tail'
-"let g:airline#extensions#branch#enabled = 1
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#coc#enabled = 0
+let g:airline_theme='one'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#branch#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#enabled = 0
 
 " lightline config
-let g:lightline#bufferline#filename_modifier = ':t'
-let g:lightline = {
-      \ 'colorscheme': 'material_vim',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'tabline': {
-      \   'left': [ ['buffers'] ],
-      \   'right': [ ['close'] ]
-      \ },
-      \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers'
-      \ },
-      \ 'component_type': {
-      \   'buffers': 'tabsel'
-      \ }
-      \ }
+" let g:lightline#bufferline#filename_modifier = ':t'
+" let g:lightline = {
+      " \ 'colorscheme': 'material_vim',
+      " \ 'active': {
+      " \   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename', 'modified' ] ]
+      " \ },
+      " \ 'tabline': {
+      " \   'left': [ ['buffers'] ],
+      " \   'right': [ ['close'] ]
+      " \ },
+      " \ 'component_expand': {
+      " \   'buffers': 'lightline#bufferline#buffers'
+      " \ },
+      " \ 'component_type': {
+      " \   'buffers': 'tabsel'
+      " \ }
+      " \ }
 
 " Color Scheme Config
 if (has("nvim"))
@@ -43,9 +43,12 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'palenight'
-colorscheme material
+" let g:material_terminal_italics = 1
+" let g:material_theme_style = 'palenight'
+" colorscheme material
+
+colorscheme one
+set background=dark
 
 " JSX Colorful style
 let g:vim_jsx_pretty_colorful_config = 1
@@ -61,7 +64,7 @@ let g:NERDCustomDelimiters={
 " vim-vue
 let g:vue_pre_processors = []
 
-" colorizer config 
+" colorizer config
 lua require 'colorizer'.setup()
 
 " fzf config
@@ -90,7 +93,6 @@ let g:NERDTreeWinPos = "right"
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " vmap <leader>f  <Plug>(coc-format-selected)
 " nmap <leader>f  <Plug>(coc-format-selected)
-
 
 " ----------------------------- HTML CLOSETAG-----------------
 " filenames like *.xml, *.html, *.xhtml, ...
@@ -136,7 +138,7 @@ let g:closetag_shortcut = '>'
 
 
 " -------------------- coc.vim config--------------------------
-
+let g:coc_node_path = '/home/yuugen/.nvm/versions/node/v14.6.0/bin/node'
 " TextEdit might fail if hidden is not set.
 set hidden
 
