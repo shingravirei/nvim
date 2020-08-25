@@ -15,25 +15,6 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#coc#enabled = 0
 
-" lightline config
-" let g:lightline#bufferline#filename_modifier = ':t'
-" let g:lightline = {
-      " \ 'colorscheme': 'material_vim',
-      " \ 'active': {
-      " \   'left': [ [ 'mode', 'paste' ], ['readonly', 'filename', 'modified' ] ]
-      " \ },
-      " \ 'tabline': {
-      " \   'left': [ ['buffers'] ],
-      " \   'right': [ ['close'] ]
-      " \ },
-      " \ 'component_expand': {
-      " \   'buffers': 'lightline#bufferline#buffers'
-      " \ },
-      " \ 'component_type': {
-      " \   'buffers': 'tabsel'
-      " \ }
-      " \ }
-
 " Color Scheme Config
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -43,9 +24,6 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-" let g:material_terminal_italics = 1
-" let g:material_theme_style = 'palenight'
-" colorscheme material
 
 colorscheme one
 set background=dark
@@ -69,13 +47,9 @@ lua require 'colorizer'.setup()
 
 " fzf config
 let g:fzf_preview_window = ''
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 
-" ctrlP config
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_match_window = 'min:4,max:15'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+nnoremap <c-p> :Files<CR>
 
 " Startify config
 let g:startify_change_to_dir = 1
@@ -89,6 +63,9 @@ let NERDTreeMinimalUI = 1
 let NERDTreeWinSize = 28
 let g:NERDTreeWinPos = "right"
 
+" Python
+let g:python_highlight_all = 1
+
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " vmap <leader>f  <Plug>(coc-format-selected)
@@ -98,7 +75,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.js'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.js,*jsx,*tsx'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
@@ -108,7 +85,7 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.vue,.*js'
 " filetypes like xml, html, xhtml, ...
 " These are the file types where this plugin is enabled.
 "
-let g:closetag_filetypes = 'html,xhtml,phtml,vue,js'
+let g:closetag_filetypes = 'html,xhtml,phtml,vue,js,jsx'
 
 " filetypes like xml, xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
@@ -138,7 +115,7 @@ let g:closetag_shortcut = '>'
 
 
 " -------------------- coc.vim config--------------------------
-let g:coc_node_path = '/home/yuugen/.nvm/versions/node/v14.6.0/bin/node'
+" let g:coc_node_path = '/home/yuugen/.nvm/versions/node/v14.6.0/bin/node'
 " TextEdit might fail if hidden is not set.
 set hidden
 

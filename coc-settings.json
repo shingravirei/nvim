@@ -18,6 +18,7 @@
         "package.yaml"
       ],
       "filetypes": ["hs", "lhs", "haskell"],
+      "formattingProvider": "stylish-haskell",
       "initializationOptions": {
         "haskell": {}
       }
@@ -35,6 +36,8 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "javascript",
+    "javascriptreact",
+    "python",
     "html",
     "json",
     "scss",
@@ -44,12 +47,15 @@
     "vue",
     "rust",
     "typescript",
+    "ts",
     "cpp",
     "h",
     "c",
     "hpp",
     "go",
-    "golang"
+    "golang",
+    "haskell",
+    "hs"
   ],
   "prettier.disableLanguages": [],
 
@@ -61,5 +67,9 @@
   "vetur.format.options.tabSize": 4,
 
   // CoC Clangd
-  "clangd.semanticHighlighting": true
+  "clangd.semanticHighlighting": true,
+
+  // Python
+  "python.formatting.provider": "yapf",
+  "python.jediEnabled": false
 }

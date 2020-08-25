@@ -1,12 +1,18 @@
 " Plugins
 call plug#begin()
+    " Python syntax
+    Plug 'vim-python/python-syntax' 
+    " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
-    " markdow preview
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    " Styled syntax
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+    " Haskell Highlighting
+    Plug 'neovimhaskell/haskell-vim'
 
     " html closetag
     Plug 'alvan/vim-closetag'
-    
+
     " vim-vue
     Plug 'posva/vim-vue'
 
@@ -15,15 +21,15 @@ call plug#begin()
 
     " jsx-pretty
     Plug 'maxmellon/vim-jsx-pretty'
-    
+
+    " TS sytax
+    Plug 'HerringtonDarkholme/yats.vim'
+
     " colorizer
     Plug 'norcalli/nvim-colorizer.lua'
 
     " sneak
     Plug 'justinmk/vim-sneak'
-
-    " oceanic-next
-    Plug 'mhartington/oceanic-next'
 
     " vim-one
     Plug 'rakr/vim-one'
@@ -52,19 +58,12 @@ call plug#begin()
     " airline
     Plug 'vim-airline/vim-airline'
 
-    " lightline
-    "Plug 'itchyny/lightline.vim'    
-    "Plug 'mengelbrecht/lightline-bufferline'
-
     " Material Theme
     Plug 'kaicataldo/material.vim'
 
     " Close Tag
     Plug 'alvan/vim-closetag'
 
-    " ctrl + p
-    Plug 'ctrlpvim/ctrlp.vim'
-    
     " fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -73,7 +72,10 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     
     " c++ syntax
-    Plug 'octol/vim-cpp-enhanced-highlight'
+    " Plug 'octol/vim-cpp-enhanced-highlight'
+
+    " C Syntax
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
 
     " fugitive
     Plug 'tpope/vim-fugitive'
